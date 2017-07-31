@@ -8,7 +8,9 @@
 
 <div class="set-description">
   <hr/>
-  {% if resource.displayName %}
+  {% if method.displayName %}
+  <h2 id="{{ getSafeId(resource.parentUrl + resource.relativeUri + method.method) }}">{{ method.displayName  }}</h2>
+  {% elif resource.displayName %}
   <h2 id="{{ getSafeId(resource.displayName + '-' + method.method) }}">{{ resource.displayName + " " + method.method }}</h2>
   {% else %}
   <h2 id="{{ getSafeId(resource.parentUrl + resource.relativeUri + method.method) }}">{{ resource.parentUrl }}{{ resource.relativeUri}} {{ method.method }}</h2>

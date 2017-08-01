@@ -9,7 +9,7 @@
 <div class="set-description">
   <hr/>
   {% if method.displayName %}
-  <h2 id="{{ getSafeId(resource.parentUrl + resource.relativeUri + method.method) }}">{{ method.displayName  }}</h2>
+  <h2 id="{{ getSafeId(resource.displayName + '-' + method.displayName) }}">{{ method.displayName }}</h2>
   {% elif resource.displayName %}
   <h2 id="{{ getSafeId(resource.displayName + '-' + method.method) }}">{{ resource.displayName + " " + method.method }}</h2>
   {% else %}
@@ -71,7 +71,7 @@
 <div class="set-examples">
   <hr/>
   {% if method.displayName %}
-  <h2 class="toc-ignore" id="{{ getSafeId(resource.parentUrl + resource.relativeUri + method.method) }}">{{ method.displayName }}</h2>
+  <h2 class="toc-ignore" id="{{ getSafeId(resource.displayName + '-' + method.displayName) }}">{{ method.displayName }}</h2>
   {% elif resource.displayName %}
   <h2 class="toc-ignore" id="{{ getSafeId(resource.displayName + '-' + method.method) }}">{{ resource.displayName + " " + method.method }}</h2>
   {% else %}
